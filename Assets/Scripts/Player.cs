@@ -22,7 +22,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        SetRandomColor();
+        //SetRandomColor();
+        currentColor = "Blue";
+        sr.color = colorBlue;
     }
 
     void Update()
@@ -94,27 +96,52 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void ProcessCollision(GameObject collision)
     {
-        if (collision.gameObject.tag == "ColorChanger")
+        if (collision.gameObject.tag == "ColorChangerRandom")
         {
             SetRandomColor();
             //Figure out how to enable and disable Color Changer instead of deleting
             Destroy(collision.gameObject);
             return;
         }
-        /*if (collision.gameObject.tag == currentColor)
+        else if (collision.gameObject.tag == "ColorChangerGreen"){
+            currentColor = "Green";
+            sr.color = colorGreen;
+            Destroy(collision.gameObject);
+            return;
+        }
+        else if (collision.gameObject.tag == "ColorChangerYellow")
         {
-            //turn off collision
-            gameObject.GetComponent<Collider2D>().isTrigger = true;
-            Debug.Log("Same color");
+            currentColor = "Yellow";
+            sr.color = colorYellow;
+            Destroy(collision.gameObject);
+            return;
+        }
+        else if (collision.gameObject.tag == "ColorChangerRed")
+        {
+            currentColor = "Red";
+            sr.color = colorRed;
+            Destroy(collision.gameObject);
+            return;
+        }
+        else if (collision.gameObject.tag == "ColorChangerBlue")
+        {
+            currentColor = "Blue";
+            sr.color = colorBlue;
+            Destroy(collision.gameObject);
+            return;
+        }
+
+        if (collision.gameObject.tag == currentColor)
+        {
+            Destroy(collision.gameObject);
 
         }
-        else if (collision.gameObject.tag != currentColor)
+        /*else if (collision.gameObject.tag != currentColor)
         {
-            //turn on collision
-            gameObject.GetComponent<Collider2D>().isTrigger = false;
-            Debug.Log("not same color :(");
+            
         }*/
     }
 }

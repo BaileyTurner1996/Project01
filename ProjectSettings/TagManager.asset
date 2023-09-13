@@ -9,6 +9,11 @@ TagManager:
   - Blue
   - Red
   - ColorChanger
+  - ColorChangerRandom
+  - ColorChangerBlue
+  - ColorChangerRed
+  - ColorChangerYellow
+  - ColorChangerGreen
   layers:
   - Default
   - TransparentFX
