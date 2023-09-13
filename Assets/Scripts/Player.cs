@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Double Jump is" + doubleJump);
             if (IsGrounded() || doubleJump)
             {
                 rb.velocity = Vector2.up * jumpForce;
