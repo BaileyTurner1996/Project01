@@ -1,8 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float jumpForce = 10f;
+    private float jumpForce = 13f;
+    private float speed = 8f;
+    private float horizontal;
+    private bool doubleJump;
+
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+ 
     public Rigidbody2D rb;
     public string currentColor;
     public SpriteRenderer sr;
@@ -13,28 +21,52 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         SetRandomColor();
     }
 
     void Update()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (IsGrounded() && (!Input.GetButton("Jump") && !Input.GetMouseButton(0) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow)))
+        {
+            doubleJump = false;
+        }
+
         if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.velocity = Vector2.up * jumpForce;
+            Debug.Log("Double Jump is" + doubleJump);
+            if (IsGrounded() || doubleJump)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                doubleJump = !doubleJump;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
 
-        }
+        if ((Input.GetButtonUp("Jump") || Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && rb.velocity.y > 0f)
+         {
+             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+         }
     }
 
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         ProcessCollision(collision.gameObject);
-    }
+    } 
     void OnCollisionEnter2D(Collision2D collision)
     {
         ProcessCollision(collision.gameObject);
+    }
+
+    bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
     void SetRandomColor()
@@ -72,7 +104,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             return;
         }
-        if (collision.gameObject.tag == currentColor)
+        /*if (collision.gameObject.tag == currentColor)
         {
             //turn off collision
             gameObject.GetComponent<Collider2D>().isTrigger = true;
@@ -84,6 +116,6 @@ public class Player : MonoBehaviour
             //turn on collision
             gameObject.GetComponent<Collider2D>().isTrigger = false;
             Debug.Log("not same color :(");
-        }
+        }*/
     }
 }

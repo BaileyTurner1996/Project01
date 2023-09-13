@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1438959535471454714}
   - component: {fileID: 1596976852300691323}
   - component: {fileID: 4142630729097353823}
+  - component: {fileID: 58639543108855172}
   m_Layer: 0
   m_Name: Yellow
   m_TagString: Yellow
@@ -151,6 +152,20 @@ PolygonCollider2D:
       - {x: 0.765, y: -0.44}
       - {x: 0.73499995, y: -0.29}
   m_UseDelaunayMesh: 0
+--- !u!114 &58639543108855172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124520159212975901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769271a6474584447bcb1c5d6a474aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  currentColor: 
 --- !u!1 &4768879632494254153
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +177,7 @@ GameObject:
   - component: {fileID: 8213529085027289702}
   - component: {fileID: 4057151650733775550}
   - component: {fileID: 3352368091581909384}
+  - component: {fileID: 199405494688832330}
   m_Layer: 0
   m_Name: Red
   m_TagString: Red
@@ -303,6 +319,20 @@ PolygonCollider2D:
       - {x: 0.76, y: -0.385}
       - {x: 0.55, y: -0.36499998}
   m_UseDelaunayMesh: 0
+--- !u!114 &199405494688832330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768879632494254153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769271a6474584447bcb1c5d6a474aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  currentColor: 
 --- !u!1 &5317492992637369689
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +344,7 @@ GameObject:
   - component: {fileID: 5497394169498625258}
   - component: {fileID: 8261617747682176809}
   - component: {fileID: 5309167507491143123}
+  - component: {fileID: 3898863451654848892}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Blue
@@ -456,6 +487,20 @@ PolygonCollider2D:
       - {x: -0.185, y: -0.685}
       - {x: -0.005, y: -0.60499996}
   m_UseDelaunayMesh: 0
+--- !u!114 &3898863451654848892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317492992637369689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769271a6474584447bcb1c5d6a474aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  currentColor: 
 --- !u!1 &5722268351941961649
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +512,7 @@ GameObject:
   - component: {fileID: 7284798629957447972}
   - component: {fileID: 7282898033279219280}
   - component: {fileID: 7145555968489018523}
+  - component: {fileID: 9076785709534463738}
   m_Layer: 0
   m_Name: Green
   m_TagString: Green
@@ -608,6 +654,20 @@ PolygonCollider2D:
       - {x: -0.29999998, y: -0.35999998}
       - {x: -0.13, y: -0.049999997}
   m_UseDelaunayMesh: 0
+--- !u!114 &9076785709534463738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722268351941961649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769271a6474584447bcb1c5d6a474aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  currentColor: 
 --- !u!1 &7545209327946574412
 GameObject:
   m_ObjectHideFlags: 0
