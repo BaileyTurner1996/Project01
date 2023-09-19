@@ -11,7 +11,7 @@ public class FollowPlayer : MonoBehaviour
         }
        else if (player.position.y < transform.position.y && player.position.y > 0.01f)
         {
-            transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, player.position.y + 1.5f, transform.position.z);
         }
     }
 }
