@@ -1118,6 +1118,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266d5000df0a64c47926828975d427bf, type: 3}
+--- !u!1 &1903827222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903827225}
+  - component: {fileID: 1903827224}
+  - component: {fileID: 1903827223}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1903827223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903827222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1903827224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903827222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1903827225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903827222}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1990594733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1401,10 +1469,22 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 590851590}
+    - target: {fileID: 2782138600230231871, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3228815760664673079, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 590851590}
+    - target: {fileID: 4053267263708232875, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116124793764435628, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4516456065371974165, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
       propertyPath: playerScript
       value: 
@@ -1413,6 +1493,10 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 590851590}
+    - target: {fileID: 8600476043090440924, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8699048248828604349, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
       propertyPath: m_Name
       value: SmallCircle
@@ -1427,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8983155661755536167, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 8983155661755536167, guid: 40b21b32e8dbdda47bad19ad7ee218c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1617,3 +1701,4 @@ SceneRoots:
   - {fileID: 1055343886}
   - {fileID: 55200204}
   - {fileID: 1687375033}
+  - {fileID: 1903827225}

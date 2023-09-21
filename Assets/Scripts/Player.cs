@@ -96,7 +96,10 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    void toggleSymbols()
+    {
+        
+    }
     void ProcessCollision(GameObject collision)
     {
         if (collision.gameObject.tag == "ColorChangerRandom")
