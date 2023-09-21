@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 762580053c057a749bb2418582d47933
+guid: b9b7c3fd172227847934921f62d2f50e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,91 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Med Circle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 303
-        width: 197
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b4ae3e179ff5f344ade65a9ec7be29c
-      internalID: -1837464359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Med Circle_1
-      rect:
-        serializedVersion: 2
-        x: 302
-        y: 303
-        width: 198
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26785aafcd197024e90f5163ab58303c
-      internalID: 1167863562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Med Circle_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 197
-        height: 198
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bac74f34c13e341439e10d63c1b1568b
-      internalID: -990259032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Med Circle_3
-      rect:
-        serializedVersion: 2
-        x: 302
-        y: 0
-        width: 198
-        height: 198
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d7a8067901083f439e7b41155f5a23c
-      internalID: 2022818253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -216,11 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Med Circle_0: -1837464359
-      Med Circle_1: 1167863562
-      Med Circle_2: -990259032
-      Med Circle_3: 2022818253
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

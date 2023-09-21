@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 762580053c057a749bb2418582d47933
+guid: bfa6cddd49e4ee942a33d88e3f483462
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Med Circle_0
+      name: Small Circle 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 303
-        width: 197
-        height: 197
+        y: 348
+        width: 152
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4ae3e179ff5f344ade65a9ec7be29c
-      internalID: -1837464359
+      spriteID: 0ae4e6921b7b5274aaea5ee20180fb7f
+      internalID: 202706843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Med Circle_1
+      name: Small Circle 1_1
       rect:
         serializedVersion: 2
-        x: 302
-        y: 303
-        width: 198
-        height: 197
+        x: 347
+        y: 348
+        width: 153
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26785aafcd197024e90f5163ab58303c
-      internalID: 1167863562
+      spriteID: 53deeb95d200f244d8900a8435939331
+      internalID: 1869216446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Med Circle_2
+      name: Small Circle 1_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 197
-        height: 198
+        width: 152
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bac74f34c13e341439e10d63c1b1568b
-      internalID: -990259032
+      spriteID: c85f66ba903029f43a5971ef3be9df99
+      internalID: 493228857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Med Circle_3
+      name: Small Circle 1_3
       rect:
         serializedVersion: 2
-        x: 302
+        x: 347
         y: 0
-        width: 198
-        height: 198
+        width: 153
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d7a8067901083f439e7b41155f5a23c
-      internalID: 2022818253
+      spriteID: 5609317e22fae76479582227af2802c7
+      internalID: -1163863798
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Med Circle_0: -1837464359
-      Med Circle_1: 1167863562
-      Med Circle_2: -990259032
-      Med Circle_3: 2022818253
+      Small Circle 1_0: 202706843
+      Small Circle 1_1: 1869216446
+      Small Circle 1_2: 493228857
+      Small Circle 1_3: -1163863798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

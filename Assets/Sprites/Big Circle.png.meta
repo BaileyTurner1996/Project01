@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9b7c3fd172227847934921f62d2f50e
+guid: 5e3e4e7dd1141b0468f54b016c9c2a27
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Big Circle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 242
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53230a641d56994fab2480631c0e5a5
+      internalID: -2012539331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Circle_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 258
+        width: 243
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a91b7d0d454f44eb9fd2c90e6811ab
+      internalID: 683362912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Circle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 242
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a53d3935af4b043859bf341ad9bd19
+      internalID: 1893382745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Circle_3
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 243
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff5f6857a7a3524a972f9b954c6c5a9
+      internalID: -1853842585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Big Circle_0: -2012539331
+      Big Circle_1: 683362912
+      Big Circle_2: 1893382745
+      Big Circle_3: -1853842585
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
