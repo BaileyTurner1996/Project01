@@ -1,5 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEditor.PackageManager;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -19,12 +23,20 @@ public class Player : MonoBehaviour
     public Color colorBlue;
     public Color colorRed;
 
+    public TextMeshProUGUI countText;
+    public GetChildren childScript;
+    public float currentCount;
+    public static event Action OnPlayerDeath;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         //SetRandomColor();
         currentColor = "Blue";
         sr.color = colorBlue;
+
+        SetCountText();
+        EnablePlayerMovement();
     }
 
     void Update()
@@ -49,6 +61,12 @@ public class Player : MonoBehaviour
          {
              rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
          }
+
+        if (currentCount == 0)
+        {
+            OnPlayerDeath?.Invoke();
+            DisablePlayerMovement();
+        }
     }
 
     void FixedUpdate()
@@ -72,7 +90,7 @@ public class Player : MonoBehaviour
 
     void SetRandomColor()
     {
-        int index = Random.Range (0, 4);
+        int index = UnityEngine.Random.Range (0, 4);
 
         //Add in some way of ensuring that the next random will not be the current case
         switch (index)
@@ -96,10 +114,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    void toggleSymbols()
-    {
-        
-    }
     void ProcessCollision(GameObject collision)
     {
         if (collision.gameObject.tag == "ColorChangerRandom")
@@ -146,5 +160,24 @@ public class Player : MonoBehaviour
         {
             
         }*/
+        //Debug.Log(currentCount);
+        SetCountText();
     }
+    
+    void SetCountText()
+    {
+        currentCount = childScript.counter;
+        countText.text = "Items Left: " + currentCount.ToString();
+    }
+
+    void DisablePlayerMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    void EnablePlayerMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
 }
