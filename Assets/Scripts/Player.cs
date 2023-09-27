@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     public float currentCount;
     public static event Action OnPlayerDeath;
 
+    [SerializeField] AudioClip _burstSound = null;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -61,6 +63,12 @@ public class Player : MonoBehaviour
          {
              rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
          }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
 
         if (currentCount == 0)
         {
@@ -153,6 +161,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == currentColor)
         {
+            AudioHelper.PlayClip2d(_burstSound, 1);
             Destroy(collision.gameObject);
 
         }
@@ -179,5 +188,6 @@ public class Player : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
+
 
 }
