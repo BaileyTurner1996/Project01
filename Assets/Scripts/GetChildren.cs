@@ -9,7 +9,7 @@ public class GetChildren : MonoBehaviour
     void Start()
     {
         List<Transform> children = GetChild(transform, true);
-        counter = children.Count / 2;
+        counter = (children.Count / 3);
         //Debug.Log(counter);
         
     }
@@ -17,7 +17,7 @@ public class GetChildren : MonoBehaviour
     private void Update()
     {
         List<Transform> children = GetChild(transform, true);
-        counter = children.Count / 2;
+        counter = (children.Count / 3);
     }
 
 

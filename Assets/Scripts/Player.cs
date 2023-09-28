@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     public GetChildren childScript;
     public float currentCount;
     public static event Action OnPlayerDeath;
-    public ParticleSystem bob;
 
     [SerializeField] AudioClip _burstSound = null;
 
@@ -37,6 +36,10 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         //SetRandomColor();
         currentColor = "Blue";
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(true);
+        transform.GetChild(4).gameObject.SetActive(false);
         sr.color = colorBlue;
 
         SetCountText();
@@ -71,6 +74,14 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Camera.main.cullingMask = Camera.main.cullingMask ^ (1 << 7);
+        }
+
+
+        SetCountText();
 
         if (currentCount == 0)
         {
@@ -108,19 +119,33 @@ public class Player : MonoBehaviour
             case 0:
                 currentColor = "Green";
                 sr.color = colorGreen;
-                
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(4).gameObject.SetActive(false);
                 break;
             case 1:
                 currentColor = "Yellow";
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(4).gameObject.SetActive(false);
                 sr.color = colorYellow;
                 break;
             case 2:
                 currentColor = "Blue";
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
                 transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(false);
                 sr.color = colorBlue;
                 break;
             case 3:
                 currentColor = "Red";
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(4).gameObject.SetActive(true);
                 sr.color = colorRed;
                 break;
         }
@@ -137,6 +162,10 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.tag == "ColorChangerGreen"){
             currentColor = "Green";
             sr.color = colorGreen;
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
             StartCoroutine(BreakCC());
             return;
         }
@@ -144,6 +173,10 @@ public class Player : MonoBehaviour
         {
             currentColor = "Yellow";
             sr.color = colorYellow;
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(true);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
             StartCoroutine(BreakCC());
             return;
         }
@@ -151,6 +184,10 @@ public class Player : MonoBehaviour
         {
             currentColor = "Red";
             sr.color = colorRed;
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(true);
             StartCoroutine(BreakCC());
             return;
         }
@@ -158,6 +195,10 @@ public class Player : MonoBehaviour
         {
             currentColor = "Blue";
             sr.color = colorBlue;
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(true);
+            transform.GetChild(4).gameObject.SetActive(false);
             StartCoroutine(BreakCC());
             return;
         }
@@ -180,7 +221,7 @@ public class Player : MonoBehaviour
             
         }*/
         //Debug.Log(currentCount);
-        SetCountText();
+        //SetCountText();
 
         IEnumerator BreakPlatform()
         {
@@ -191,7 +232,7 @@ public class Player : MonoBehaviour
             platformParticle.Play();
             sr.enabled = false;
             bc.enabled = false;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
             Destroy(collision.gameObject);
         }
         IEnumerator BreakCC()
@@ -203,7 +244,7 @@ public class Player : MonoBehaviour
             platformParticle.Play();
             sr.enabled = false;
             bc.enabled = false;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
             Destroy(collision.gameObject);
         }
         IEnumerator BreakCircle()
@@ -215,7 +256,7 @@ public class Player : MonoBehaviour
             platformParticle.Play();
             sr.enabled = false;
             bc.enabled = false;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
             Destroy(collision.gameObject);
         }
     }
