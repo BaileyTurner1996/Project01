@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEditor.PackageManager;
 using System;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     public GetChildren childScript;
     public float currentCount;
     public static event Action OnPlayerDeath;
+    public ParticleSystem bob;
 
     [SerializeField] AudioClip _burstSound = null;
 
@@ -106,6 +108,7 @@ public class Player : MonoBehaviour
             case 0:
                 currentColor = "Green";
                 sr.color = colorGreen;
+                
                 break;
             case 1:
                 currentColor = "Yellow";
@@ -113,6 +116,7 @@ public class Player : MonoBehaviour
                 break;
             case 2:
                 currentColor = "Blue";
+                transform.GetChild(3).gameObject.SetActive(true);
                 sr.color = colorBlue;
                 break;
             case 3:
@@ -127,42 +131,48 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ColorChangerRandom")
         {
             SetRandomColor();
-            //Figure out how to enable and disable Color Changer instead of deleting
-            Destroy(collision.gameObject);
+            StartCoroutine(BreakCC());
             return;
         }
         else if (collision.gameObject.tag == "ColorChangerGreen"){
             currentColor = "Green";
             sr.color = colorGreen;
-            Destroy(collision.gameObject);
+            StartCoroutine(BreakCC());
             return;
         }
         else if (collision.gameObject.tag == "ColorChangerYellow")
         {
             currentColor = "Yellow";
             sr.color = colorYellow;
-            Destroy(collision.gameObject);
+            StartCoroutine(BreakCC());
             return;
         }
         else if (collision.gameObject.tag == "ColorChangerRed")
         {
             currentColor = "Red";
             sr.color = colorRed;
-            Destroy(collision.gameObject);
+            StartCoroutine(BreakCC());
             return;
         }
         else if (collision.gameObject.tag == "ColorChangerBlue")
         {
             currentColor = "Blue";
             sr.color = colorBlue;
-            Destroy(collision.gameObject);
+            StartCoroutine(BreakCC());
             return;
         }
 
         if (collision.gameObject.tag == currentColor)
         {
-            AudioHelper.PlayClip2d(_burstSound, 1);
-            Destroy(collision.gameObject);
+            if (collision.gameObject.GetComponent<BoxCollider2D>() != null)
+            {
+                StartCoroutine(BreakPlatform());
+            }
+            else
+            {
+                StartCoroutine(BreakCircle());
+            }
+            //StartCoroutine(BreakPlatform());
 
         }
         /*else if (collision.gameObject.tag != currentColor)
@@ -171,6 +181,43 @@ public class Player : MonoBehaviour
         }*/
         //Debug.Log(currentCount);
         SetCountText();
+
+        IEnumerator BreakPlatform()
+        {
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            BoxCollider2D bc = collision.gameObject.GetComponent<BoxCollider2D>();
+            AudioHelper.PlayClip2d(_burstSound, 1);
+            ParticleSystem platformParticle = collision.gameObject.GetComponentInChildren<ParticleSystem>();
+            platformParticle.Play();
+            sr.enabled = false;
+            bc.enabled = false;
+            yield return new WaitForSeconds(1f);
+            Destroy(collision.gameObject);
+        }
+        IEnumerator BreakCC()
+        {
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            CircleCollider2D bc = collision.gameObject.GetComponent<CircleCollider2D>();
+            AudioHelper.PlayClip2d(_burstSound, 1);
+            ParticleSystem platformParticle = collision.gameObject.GetComponentInChildren<ParticleSystem>();
+            platformParticle.Play();
+            sr.enabled = false;
+            bc.enabled = false;
+            yield return new WaitForSeconds(1f);
+            Destroy(collision.gameObject);
+        }
+        IEnumerator BreakCircle()
+        {
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            PolygonCollider2D bc = collision.gameObject.GetComponent<PolygonCollider2D>();
+            AudioHelper.PlayClip2d(_burstSound, 1);
+            ParticleSystem platformParticle = collision.gameObject.GetComponentInChildren<ParticleSystem>();
+            platformParticle.Play();
+            sr.enabled = false;
+            bc.enabled = false;
+            yield return new WaitForSeconds(1f);
+            Destroy(collision.gameObject);
+        }
     }
     
     void SetCountText()
